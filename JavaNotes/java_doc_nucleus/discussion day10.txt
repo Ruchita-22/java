@@ -1,0 +1,111 @@
+What today?
+----------
+Collection and thread are never ending topics
+but life moves on (will come back with more info on 
+a suitable time)
+
+=> SQL
+=> basic of jdbc
+=> CRUD operation
+=> Good programming practice
+
+---------------------------
+SQLDeveloper tool is working for you?
+-------------------------------------
+At home better u install an lightwt db it is better to do exp with
+light wt db!
+
+Basics:
+---------
+
+SQL: Str Q Language?
+	A way to interact with database
+
+
+=> RDBMS: cod rules 16 80's
+
+=> What is JEE 8?
+-----------------
+ group of jsr, more then 35
+ 
+ ref imp of jee: glassfish aka app server
+ vendor : thorse follow jee spec and create their product
+ 		weblogic, jboss, websphere....
+ 
+
+JSR for jdbc 4.0=> jse 221
+=> JSR 369 Java Servlet 4.0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

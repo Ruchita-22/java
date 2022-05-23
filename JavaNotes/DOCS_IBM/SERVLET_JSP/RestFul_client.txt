@@ -1,0 +1,18 @@
+ClientConfig clientConfig = new DefaultClientConfig();
+
+clientConfig.getFeatures().put(JSONConfigurtion.FEATURE_POJO_MAPPING,Boolean.TRUE);
+
+//2nd step
+
+Client c = Client.create(clientConfig);
+
+WebResource resource1 = c.resource("ursl for rewuested resource")
+
+
+//3rd step
+
+Employee res = resource1.accept("application/json").get(Employee.class);
+
+sop(res.getEid());
+sop(res.getName());
+sop(res.getSalary());

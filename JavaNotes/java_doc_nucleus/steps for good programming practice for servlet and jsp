@@ -1,0 +1,30 @@
+Good programming practice:
+--------------------
+=> 3 tier arch
+
+	Web <---> persistance layer <---> DB
+
+=> strick mvc, put jsp in secure  folder in WEB-INF
+	
+=> connection pool
+------------------
+	1. put some mapping int context.xml
+		ie some mapping is used to confi conn pool with tomcat
+
+	<Resource
+	name="jdbc/test"
+	auth="Container"
+	driverClassName="com.mysql.jdbc.Driver"
+	type="javax.sql.DataSource"
+	url="jdbc:mysql://localhost:3306/exp121"
+	username="root"
+	password="root" >
+	</Resource>
+
+
+
+	2. put jar file int lib of tomcat and also to lib of ur project
+		and dont forget to add that jar file to classpath
+
+	3. now open web.xml of ur project ( we want to infrorm our project to use conn pool)
+		and add some mapping

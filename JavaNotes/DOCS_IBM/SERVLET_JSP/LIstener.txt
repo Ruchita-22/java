@@ -1,0 +1,21 @@
+THe httpSession listener interface is used to monitor
+when sessions are created and destroyed on the server.
+its best practical use would be to track session use statistics for server
+
+Filter:
+=======
+
+Recording all incoming requests
+Logs the ip addreesss of the computers from which
+the request originate
+conversion
+DataCompression
+Encryption and decryption
+
+Input validation etc.
+
+Authentication and autherization of request for resources.
+
+
+
+

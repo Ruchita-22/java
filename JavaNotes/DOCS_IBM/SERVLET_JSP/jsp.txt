@@ -1,0 +1,575 @@
+
+      JSP(JAVA SERVER PAGEs) 
+      ----------------------
+ 
+      Jsp is used to develope dynamic web applications
+
+      jsp is a servlet
+
+      Jsp is an api given by the sun microsystem 
+
+       Server vendors responsible to provide implementation
+       for jsp api(jsp-api.jar in tomcat).
+
+      jsp is server-side  technology
+
+      jsp mainly used for presentation layer(mvc)
+
+      jsp == html+javacode
+
+      jsp file save with .jsp extension
+
+
+   jsp is a servlet
+   -----------------
+
+   1) ex:
+   -------
+
+     1) one.jsp->one_jsp.java
+
+       jsp lifecycle methods:
+      ========================
+
+       _jspInit()
+       _jspService()
+       _jspdestroy()
+
+
+     2)JSP Scripting Elements
+
+         a) simple message or text message
+
+         b) scriptlets
+            ------------
+
+             Scriplets are used to write  java code inside jsp
+
+
+           syntax:
+            ======
+
+
+           <%   -- java code ----- %> 
+
+
+         ex:
+         ----
+
+          <%
+                  out.println("welcome to jsp using scriptlet tag");
+    
+           %>
+
+
+        note:
+     ---------
+           the above code will append inside generated servlet
+            one_jsp.java-- 
+
+
+         _jspService(){
+
+
+	 out.println("welcome to jsp using scriptlet tag");
+    
+
+
+           }
+
+    
+
+
+
+
+       b) jspDeclarations
+          ===============
+    
+            to declare class-level variables(instance variables) and 
+           concrete methods(instance methods)
+           inside jsp then we go for jsp declarations.
+
+      syntax:
+      -----
+       <%!
+             //instance variables
+             //instance methods
+
+
+       %>
+
+        ex:
+        ---
+
+          <%!
+                  int a=10;
+                   int b =20;
+
+                    public int sum(){
+
+			return (a+b);
+
+                      }
+
+
+            %>   
+
+        <%
+                
+            out.println(sum());
+
+
+         %>
+
+       note:
+       -----
+       we need to call variables  and method which declared using
+       jspDeclarations inside scriptlet tag(<% %>)
+
+       inside Generated Servlet one_jsp.java
+
+       public class one_jsp extends _JspHttpBase{
+
+          int a=10;
+          int b =20;
+
+        public int sum(){
+
+			return (a+b);
+
+                      }
+
+
+
+        _jspService(HttpServletRequest req,HttpServletResponse res){
+
+             out.println(sum());
+
+
+         }
+
+     JspExpressions:
+     ===============
+
+       JspExpression is used to evaluate the expression which placed 
+        in it. the evaluate result sent back to client using
+       response object
+
+        syntax:
+         ------
+           <%= expression %>
+     
+     ex:
+     ====
+       <%= 1+2%>
+
+       <%= sum()%>
+
+   
+    JspDirectives:
+    ===============
+
+    to provide an instructions to your  jspDirectives.
+     
+    syntax:
+    --------
+      <%@ %>
+
+     1) page  --- <%@page %>
+
+     2)include  ---  <%@include %>
+   
+     3)taglib  ---<%@taglib %>
+    
+
+      Jspimplicit objects:
+      ---------------------
+
+       by default for every jsp page contains 9 implicit objects
+
+       1)out    --- JspWriter
+
+       2)request --- HttpServletRequest
+       
+       3)response -- HttpServletResponse
+  
+       4)session - HttpSession
+
+       5)application -ServletContext
+
+       6)config  -- ServeltConfig
+
+       7)exception - Throwable
+
+       8)page   ---Object
+     
+       9)pageContext ---PageContext
+     
+           
+      JspDirectives:
+      ==============
+
+        1)page directive:
+          =================
+      
+      Page directive is used to provide global information
+      to your jsp,import,contenttype....etc
+
+    syntax:
+    ------
+
+    <%@ page attribute="value"%>
+
+    1)import
+     -----------
+    ex:
+     ====
+
+      <%@ page import="java.util.*"%>
+ 
+
+      <% 
+
+             ArrayList al = new ArrayList();
+
+                 al.add(10);
+                al.add(20);
+                al.add(30);
+
+
+             out.println(al);
+    
+
+       %>
+   
+      
+   
+
+
+      2)contentType:
+       ---------------
+   
+      3)info 
+        -----
+      
+      this attribute used to provide any description  to your jsp.
+
+      4)extends:
+       ==========
+
+        but it is not recommended.
+
+     5)session :
+       ==========
+
+          session = true
+
+       session=false
+
+    <%@page session="false"%>
+
+
+     6)buffer :
+      ==========
+     
+     buffer is temparory memory which hold some data.
+      
+    when ever we use out.println()  the data will store in the
+   buffer  by  default buffer size if 8 kb
+      
+     <%@ page buffer="10kb" %>
+
+               
+     7)autoFlush: 
+        ---------
+
+        to clean the buffer then we required autoflush
+
+   by default the value is true
+
+           
+    <%@page autoFlush="false"%>
+       
+  
+     8) language :
+      ============
+        by default the value is java.
+
+       <%@page language="java"%>
+      
+     9)errorPage
+      -----------
+ 
+       to handle exceptions
+     synt: 
+     ----
+       <<%@page errorPage="error file name" %>>
+
+    ex:
+      -----
+
+      index.jsp
+       ---------
+       <%@page errorPage="error.jsp" %>
+
+     <% 
+
+    int a =10;
+    int b = 0;
+
+    int c= a/b;
+
+    out.println(c);
+
+
+
+      %>
+
+
+
+     10)isErrorPage:
+      ---------------
+    
+       to display the exceptions:
+       ===========================
+     By the value is false  i.e, isErrorPage="false"
+
+     Explicitly we need to make isErrorPage="true".
+
+
+    <%@page isErrorPage="true"%>
+
+       ex:
+        ---
+          error.jsp
+          ---------
+              <%@page isErrorPage="true"%>
+
+
+            <%=exception%>
+
+    
+     11)isThreadSafe:
+        =============
+         
+        Multthread  execution mode 
+       by  the default the value is isThreadSafe="true".
+
+     <%@page isThreadSafe="false"%> -- SingleThreadModel
+
+     implements SingleThreadModel interface
+              
+
+     12)isELIgnored:
+       -------------
+
+         EL(Expression Language):
+         -------------------------
+
+        El has introduced from jsp 2.0
+
+        El :-- to perform arthmatic,relational and logical  operation.
+
+        the main use of el is used to display the contents
+      directly from request,application and session,JavaBean...
+       
+     syntax:
+     ------
+
+      ${expression}   
+
+     
+      by default the isELignored is false
+
+     <%@page isELignored="false" %>
+
+
+      EL variables:
+      =============
+
+
+      1) param  -- request.getParamter("key")
+      2)sessionscope
+      3)requestScope
+      4) appliactionScope
+
+      
+    @include Directive:
+    --------------------
+   
+     1) to include contents of any file inside your jsp.
+
+    syntax:
+
+    <%@include file="">
+
+    
+    JSP Action Elements:
+    --------------------
+
+       <jsp:include> 
+      <jsp:forword>  --- requestDispatcher
+       <jsp:param>  ---  ---assignment 
+
+     -------------
+     
+      <jsp:userBean>
+      <jsp:setproperty>
+      <jsp:getProperty>
+      
+       <jsp:param>  --- 
+
+
+    
+    JSP Taglibrary:
+    ---------------
+
+    JSTL:
+    -----
+ 
+   Jsp standard tag library is given apache foundation
+
+   JSTL is used to remove java code from scriptlets
+
+   JSTL-12.jar
+
+    1)core :---  to perform conditionals 
+   
+    2)sql :- to interact with data
+ 
+   3)formatting
+
+   4)functional : - String manipulation
+
+   5)xml processing   :- to xml data
+
+
+  to work with jstl we require taglib directive
+
+core:
+====
+
+1) <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+2)<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
+
+ <c:import url="">
+ ===========
+
+   1) two.jsp available  in DemoOnJsp project
+
+      we are in two.jsp of DemoOnJsp project
+
+   
+
+   usecase:
+   ========
+
+   DemoOnJstl
+
+  core.jsp -- i want to append the content of two.jsp.
+
+  
+   JSP Custom tags(user defined tags):
+   -----------------------------------
+
+   1) create a class which extends from TagSupport class
+      and override one method dostartTag()
+
+   2) create a file under /WEB-INF/<filename>.tld (taglib descriptor)
+   
+       <filename>.tld
+       ---------------
+      Some tags:
+      
+      <doctype>
+     <taglib>
+     
+      <tlib></tlib>
+      <jsp-version></jsp-version>
+       <shortname></shortname>
+        <uri>/WEB-INF/<filename>.tld</uri>
+
+      <tag>
+      <name><name>
+      <tag>       
+
+
+
+     <taglib>
+        
+    3) create a jsp file to work  with custom tags
+
+   usecase:
+   --------
+
+   <c:ibm  display=""/>
+   
+
+
+
+
+   
+  
+
+
+      
+
+   
+    
+
+    
+
+
+    
+
+
+   
+     
+
+
+
+
+
+
+      
+
+
+    
+
+
+     
+
+
+      
+
+       
+
+      
+       
+
+
+
+   
+
+      
+      
+
+
+      
+           
+   
+
+
+      
+   
+       
+
+
+
+      
+
+     
+
+      

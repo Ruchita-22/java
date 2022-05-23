@@ -1,0 +1,388 @@
+   
+  JAVASCRIPT:
+  -----------
+
+  JavaScript is a dynamic scripting language
+
+  JavaScript is a light-weight and intrepreted  language
+
+  javascript is a not a compiled language.
+
+  javaScriptEngine responsible to execute your javascript code
+
+  
+  javascript mainly used to perform client-side validations.
+
+  
+  how to work:
+  -------------
+
+  we can embedded this javascript code inside html page using
+  one tag called <script></script>.
+
+  syntax:
+  -------
+
+  <script type="text/javascript">
+
+  //javascript code
+ 
+  </script>
+
+
+  In three places we can use this script tag
+  
+  1) header(headtag):
+    --------
+   syntax:
+   --------
+      <head>
+        <script type="text/javascript">
+
+      //javascript code
+ 
+       </script>
+     </head>
+
+  2) body(body tag):
+    ------------------
+
+     syntax:
+   ------
+      <body>
+        <script type="text/javascript">
+
+      //javascript code
+ 
+       </script>
+     </body>
+
+  
+  3) external javascript file :
+     --------------------------
+
+     a)create a text file and in this file write a javaScript code
+    and save the file with extension .js --(light-weight)
+    
+    ex:
+   ====
+    app.js
+    -------
+
+    document.writeln("welcome to java script");
+
+   
+ 
+    b) we need to use this external javascript file in your html file
+   using src attribute of <script> tag.
+ 
+   ex:
+   ----
+   htmlpage:
+    ----
+    synt:
+    -----
+  
+   <script type="text/javascript" src="location of javascript file"/>
+
+   <script type="text/javascript" src="app.js"/>
+
+  
+   execution: 
+   ---------
+
+   Every browser contain javascript engine
+     
+
+    1) chrome  --  v8 chrome  -- javascript engine1)
+
+    2) firefox --- spider monkey  -- javascript engine
+
+    3) opera  ---  nitro  
+
+    4) IE     ----   chakra
+    
+
+   javascript engine convert your javascript code into bytecode.
+   which can be understand by the browser.
+
+
+   variables:
+   ----------
+
+   to declare a  variable  we use var key word
+
+   ex:
+   ---
+
+   var a ;
+   var b="hello"
+   var c = 20.0  
+
+   
+   functions:
+   ==========
+  
+   functions  are used to perform a task .
+
+   syntax:
+   -------
+  
+   function <function-name>(){};
+
+   function function-name(parameters){}
+
+   ex:
+   ---
+
+   function display(){
+     
+   document.writeln("welcome to javascript using function"+"<br>");
+
+   }
+   
+     
+  function add(a,b){
+
+   var c = a+b;
+
+  }
+    
+  note: type-inference language.
+  
+  popup boxes:
+   ==========
+   
+   alertbox: 
+   ---------
+
+   syntax:  alert("statements");
+   ------
+
+   alert("welcomee to javascript using alert");
+
+ 2) prompt:
+    =======
+     
+    prompt("message");
+
+
+   ex:
+   ---
+   
+   write a javascript to read a and b variable  values at run time
+solu:
+ ---
+   var  a  = prompt("enter the value for a ");
+   var  b  = prompt("enter the value for b");
+
+
+   Client-side: Form validations
+   -------------------------------
+    
+    1) create a html(login.html) file which contain two fields 
+
+      UserName : 
+      password
+
+        login button
+
+   2) write a a javascript code to validate the username and password
+
+    useraname=admin, password is admin
+
+   if username and password match the request has to go 
+
+   ex1.html
+
+   3)if username and password is not matched then it display 
+      same html file.(login.html)
+
+
+     using javascript client-side validation:
+    ------------------------------------------
+
+  1)  enter value for a -text box   ---   suppose 10
+
+      enter value for b  -text box  ---   this values should be less than a.
+   
+      enter value for c  -text box   ---- this value should be greater than
+ 					   a and b.															
+                                          
+
+      first.html
+
+            
+    Regular Expression:
+    ===================
+
+    Regular is a pattern used to match a character of combination
+    in string
+
+   Regular expresssion is used for search a string based on 
+   particular pattern
+
+    expressions or pattern
+    ------------------------
+
+    [0-9] -- it will accept one character from 0 to 9 digits
+
+    [a-z] -- it will accept one character from a to z
+
+    [A-Z] -- it will accept one character from A to Z
+
+    [.]  --- all character 
+
+
+  quantifiers:
+  ------------
+
+   *  -- indicates zero or more times the character occurence.
+
+  +    -- atleast one time occur and more times
+
+   ? --- zero or exactly one time occurance
+
+  ^  --  negatation  operation
+
+
+  ex:
+  ---
+
+  [abc]  --- a or b or c
+
+  /a+/  --- a or aaa
+
+  /ab* / ---  b or bbbb
+
+  /ab? / --- 0 or b
+
+
+ /[^abc] --- it will accept d to z
+
+  {n}  --no of occurrence
+   {n,m} --- m -- maxmimum  of occurrence from n
+
+      {9,5} -- 5  of 9 
+  
+  [0-9]{10,5}
+   
+  test();
+  exec();
+  match();
+
+   
+  1)create a html file it contain one textbox  mobileno
+   and button name verify.
+
+    
+   pattern for mobile:
+  --------------------
+   [987][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
+
+   or 
+
+   [987][0-9]{9}
+
+   var mb = /[987][0-9]{9}/
+
+ pattern:
+  -------
+
+   /^ pattern $/
+
+ 
+  //Assigment  
+  -----------
+   
+  write a reqular expression for passowrd
+
+  1)  password should be atleast 8 characters
+
+  2) password contains, one special character[@$#] and
+   one uppercase letter [A-z] and one digit [0-9] and
+   remaining characters.
+
+
+  Node JS
+  --------
+
+
+  
+  
+
+
+
+
+       
+
+
+
+
+   
+
+
+
+    
+
+
+
+     
+  
+  
+    
+  
+
+
+  
+
+ 
+     
+
+    
+   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+      

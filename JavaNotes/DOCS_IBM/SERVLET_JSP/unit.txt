@@ -1,0 +1,208 @@
+   
+  JUNIT testing:
+  --------------
+
+  UNit : - unit a piece of code in java program
+   (class or member methods or variables)
+
+  
+  Junit is technology is used to test the code ,
+  Developer ensures that the code is working as he/she expected
+
+  
+  Developer by comparing the outputs 
+  expectedoutput and actual outputs.
+
+  
+  Junit.org
+  ---------
+  
+   junit4.12.jar
+
+   
+  Annotations:-
+  --------------
+
+  1)@Test
+  2)@Before
+  3)@Beforeclass
+  4)@After
+  5)@AfterClass
+  6)@Ignore
+ 
+ 
+ ex:
+ ===
+  1)create a class called Calculation it contain one method 
+     called int sum(int ,int);
+
+  
+   public int calc(int a,int b); --  int calce(int,int)--method signature
+ 
+   2) write a junit test code for sum method whether 
+
+   the code is working as per developer expected.
+
+
+  hamcrest-core-1.2.jar -- download
+
+
+  Assertion :
+ -------------
+
+ assertEquals(Expected,actual);
+
+  assert:
+  ------
+   assert is a method used to determining the testcase output
+  i.e testcase i passed or failed
+
+  these methods available in org.junit.Assert.*;
+
+
+  1)assertEquals
+  2)assertArrayEquals
+  3)assertNotNull
+  4)assertNull
+  .....
+
+  ....
+
+  all methods are  static methods.
+  we need to call this methods classname.methodname
+
+  ex:
+ ----
+
+   Assert.assertEquals(expected,actual)
+  
+  
+  assignment
+  -----------
+   
+   1)creat a class called ExampleOnJunit
+
+    in this class create a method which return int array (int[])
+
+   2)write a junit test code for that method and 
+
+   compare expected out and actual output  using 
+   assertArrayEquals(expected,actual)  
+
+ 
+    
+   2)@Suite Classes;
+   ------------------
+  
+   to execute mutliple testcase classes as single unit then we go for
+  suite.
+
+  @RunWith()
+   @Suite({})
+   
+
+  Difference between @BeforeClass and @Before
+  ---------------------------------------------
+
+  1)@BeforeClass method will execute only once and 
+   the method should be a static method.
+
+  2)@Before  rmethod  will executes based on testcase methods in your
+   class
+
+   ex:
+  ----
+  1) beforemethod()
+  2) two test cases
+
+    o/p:-   before method executes two times.
+
+
+   Difference between @AfterClass and @After
+  --------------------------------------------
+  1)@AfterClass method will execute only once and 
+   the method should be a static method.
+
+  2)@After rmethod  will executes based on testcase methods in your
+   class
+
+  ex:
+  ----
+  1) aftermethod()
+  2) two test cases
+
+    o/p:-   After method executes two times.
+
+  
+   BLUEMIX ---self study(ppts Day13)
+  --------------------------------------
+
+   1)Bluemix  is cloud 
+   -------------------
+  
+   2)Paas(platform as a serive)
+     Iaas(Infrastructure as a service)
+     Saas(Software as a service) 
+     
+     Baas(Business as a serivce) 
+
+   
+    ---main motto of cloud (pay per use)
+ 
+    ---Cloud venodors:
+      ---------------
+
+  1) AWs() -- putty server,wincp,firezilla(ec2-user) -Amazon -jeff bezos
+
+  2) MicorsoftAzure - microsoft
+
+  3) GoogleCloud - Google
+
+  4) bluemix --  IBM --Ibm watson
+
+
+  MVC(model view controller):
+  ----------------------------
+
+ 1)view layer --presentation logic (.html.,jsp,.php..)
+
+ 2)Controller -Servlet,structs1.x -- ActionServelt,
+            strut2.x- StrutExecutePrearedAndExcuteFilter
+           spring -- DispatcherServlet(front controller)
+    
+    -----------service layer --Business layer
+ 
+ 3)model: --- javabeans,DAO(DataAccesObject) classes,vO(valueObject)classes
+      
+     
+  DAO :- A class which contain code which related to Database
+ 
+  javabean :--   A class which contain setters and getter method
+
+     -------------------Database layer or Persistent layer
+
+
+ 
+  ---   ---
+
+  jar -cvf(CREATE VERSBOSE FILE)  --
+
+   TO CREATE A WAR,JAR,EAR FILES
+
+   1)TO DELIVER CORE JAVA PROJECTS  THEY USE  myapp.jar
+   2)TO deliver webbased projects they use myapp.war 
+   3) to deliver ejb(Entire java Bean) projects -- myapp.ear
+
+   
+  
+
+  jar -xvf(XTRACT VERSBOSE)  ------
+   ----------------------------
+   TO EXTRACT ANY WAR,JAR,EAR
+  
+
+
+
+ 
+   
+  

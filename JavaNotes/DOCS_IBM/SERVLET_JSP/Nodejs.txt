@@ -1,0 +1,230 @@
+
+   Node JS
+   --------
+
+   Node js  opensource server side technology which is build on 
+   chrome v8 javascript Engine.
+
+   it is non-blocking asychronouos(I/O) and cross platform
+   which provide environment for developing high scalable and 
+   server-side applications.
+
+   Nodejs mainly used to develop  chat appliactions,webapplicationr
+   and network application ...etc
+
+    
+   node js written  and developed by Ryan Dahl  2009
+
+   javascript  code executes outside the browser.
+
+   
+   1)cross platform independent...
+ 
+   MultiThread process:
+   --------------------
+
+
+   1)software nodejs
+
+     nodejs.org
+
+  
+   Lts ---8.x.x
+   -------------
+    Ex:
+    ----   
+
+   2)create a nodejs application  which display welcome message.
+
+  
+    1) create text file and named  as app and save with app.js
+
+  
+    app.js
+    -----
+
+
+   console.log('welcome to nodejs');
+
+
+  to execute:
+  --------
+
+  syntaxs:  node filename.js
+
+  node app.js --- in nodejs command prompt
+   
+
+   nodejs REPL(nodejs shell)
+   --------------------------
+
+   Read : it will read input.
+   
+   Evaluate : it will take input evaluate based on request.
+
+   print : after evaluation the output is displayed
+
+   Loop :  it will loop all the nodejs statements untill close
+           the nodejs shell
+
+
+   ------------------------------------------------
+
+  .save -- to save the statements into file
+
+  .load -- to load the file in to nodejs shell
+
+   ctrl+c -- press two time to exit from nodejs shell
+
+
+  how to enter into  nodejs shell
+  --------------------------------
+   type node
+  > node shell
+    
+
+   
+  Modules:
+  --------
+
+  1)core modules:
+   ---------------
+
+   node_modules:
+   -------------
+   1) http  :- this modules includes classes,methods and 
+                     events to create http server
+
+   2)fs   :- this modules include methods and events to peform
+             file I/O operation.
+
+   3) path :-this modules includes methods and events to deals with 
+               filepath
+
+   4) url   :-
+  
+   5) querystring : this modules work querystring
+
+
+  
+  to work with this modules we need load this modules inside
+  your js application using require()
+
+  ex:
+  ----
+
+   var  http = require('http');
+
+
+  
+   http module:
+   -------------
+
+  1) create nodejs file which run inside httpserver
+
+
+     a) to create http server
+ 
+       http.createServer(function(request,response){
+
+
+
+
+       });
+
+
+  2)fs :
+   -----
+    
+    var fs  = require('fs');
+   
+   
+   to read a file
+   --------------
+    
+   readFileAsync('filename',funtion(err,data));
+
+
+
+
+  2)local modules
+  3) Thirdparty modules
+
+
+  ex:
+  ----
+
+  1) create nodejs file to display content of a file temp.txt on the
+    browser using http,fs module.
+
+
+  
+  Write a content into file:
+  ---------------------------
+
+  syntax:
+  -------
+
+   fs.writeFile('filename','data',func(err));-
+    
+  
+  appendFile
+  ----------:
+  
+   fs.appendFile('filename','data',function(err));
+
+   it will append the content at end of the file.
+   
+   ex:
+   ==
+
+   TMRW:
+   =====
+
+   what is callback  function?
+   why we require callback function?
+   Difference between blocking(synchronous) and non-blocking(Asynchronous)
+   NPM(node package manager).
+   what is package.json ?
+ 
+   how to add nodejs(nodeeclipse) plugin in eclipse?
+
+   
+
+  
+
+   
+
+
+
+
+
+  
+
+  
+
+   
+
+  
+
+   
+    
+  
+
+ 
+   
+  Modules:
+  --------
+  
+   
+   
+
+
+       
+
+ 
+
+  
+
+  
+  

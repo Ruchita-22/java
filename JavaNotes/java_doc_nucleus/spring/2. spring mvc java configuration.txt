@@ -1,0 +1,116 @@
+Spring mvc hello world! java configuration
+-------------------------------------------
+
+
+------------------
+	Monday: zip it and pack in one folder : 3 Hr, intenet conn + spring sts
+------------------
+
+xml vs Java configuration?
+---------------------------
+	xml + java
+
+=> java configration
+=. spring boot : zero configuration
+		java configration
+
+
+Step 1: first we need to replace dispatcher-servlet.xml with java code
+
+	What we have mentioned in dispatcher-servlet.xml?
+	
+	1. which package to scan
+	2. view resolver
+
+
+
+
+configuration for bootstrapping
+
+
+@Configuration // replacement of xml file, telling spring it is configuration file
+@ComponentScan(basePackages={"com"})
+@EnableWebMvc
+public class AppConfig extends WebMvcConfigurerAdapter{
+
+    @Bean
+    public InternalResourceViewResolver getInternalResourceViewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/pages/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		 // Don't forget the ending "/" for location or you will hit 404.
+	    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	 
+	}
+    
+    
+}
+
+
+Or even we can replace everything from web.xml
+-------------------------------------------
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-war-plugin</artifactId>
+		<version>2.2</version>
+			<!-- ignore missing web.xml error -->
+			<configuration>
+				<failOnMissingWebXml>false</failOnMissingWebXml>
+			</configuration>
+</plugin>
+
+
+
+web.xml spring config, model
+
+
+now how to replace web.xml?
+------------------------
+
+public class WebInitilizer extends
+		AbstractAnnotationConfigDispatcherServletInitializer {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+
+		return null;
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+
+		return new Class[]{AppConfig.class};
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+
+		return new String[]{"/"};
+	}
+
+}
+
+
+
+hello world controller:
+-------------------------
+
+@Controller
+@RequestMapping("/")
+public class HelloWorldController { 
+	    @RequestMapping(method = RequestMethod.GET)
+	    public String sayHello(ModelMap model) {
+	        model.addAttribute("greeting", "Hello World from Spring 4 MVC");
+	        return "welcome";
+	    }
+ }
+
+
+http://www.kubrynski.com/2014/01/understanding-spring-web-initialization.html
+https://www.mkyong.com/spring-mvc/gradle-spring-4-mvc-hello-world-example-annotation/
+

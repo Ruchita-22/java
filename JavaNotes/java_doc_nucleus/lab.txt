@@ -1,0 +1,66 @@
+LAB ASSIGNMENTS
+------------------------
+CORE SPRING	-AOP
+------------------------
+
+
+
+
+In lab DI you have created book application, now we require to log information while somebody deleted book
+Improve the application using AOP to applying logging
+
+
+@Service
+public interface BookService implements  BookService {
+
+	@Autowire
+	private BookDao dao;
+	
+	public List<Book> getAllBooks(){
+	}
+	public Book addBook(Book book){}
+
+	public void deleteBook(int id){
+	// if somebody delete book we need to log information in log file using AOP
+	}
+	public void updateBook(int id, Book book){}
+	public Book getBookById(int id){}
+}
+
+
+
+Custom annotation
+-------------------
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Loggable {
+
+}
+
+
+
+Improve application design by AOP
+----------------------------------
+
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+@Component
+@Aspect
+public class MethodLogger {
+	private static final Logger logger=LoggerFactory.getLogger(MethodLogger.class); 
+	
+  @Around("@annotation(Loggable)")
+  public Object around(ProceedingJoinPoint point) throws Throwable {
+    long start = System.currentTimeMillis();
+    Object result = point.proceed();
+    logger.info("start "+MethodSignature.class.cast(point.getSignature()).getMethod().getName()+" is called"+" takes " +(System.currentTimeMillis() - start));
+    return result;
+  }
+}

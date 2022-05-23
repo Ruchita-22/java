@@ -1,0 +1,864 @@
+
+
+Interface:
+===========
+
+Interface is which contain set of abstracts methods.
+
+public interface MyInterface{
+
+ void methodOne();
+ void methodTwo();
+
+
+
+
+}
+
+
+
+
+public class A extends B implements C,D{
+
+
+}
+
+
+
+
+
+
+JDBC:
+======
+JDBC is stands for Java Database connectivity
+
+or 
+Jdbc is an api
+
+
+jdbc is an java class which is interact with database.
+
+
+
+
+java.sql.*
+
+============
+
+interfaces
+-----------
+
+1)Driver
+2)Connection
+3)Statement
+4)PreparedStatment
+5)CallableStatement
+6)ResultSet
+7)ResutMetaData
+
+
+classes
+=======
+
+DriverManager
+Types
+Date
+
+
+javax.sql.*;
+============
+
+Classes
+=======
+
+DataSource
+Rowset
+
+Steps to interact with database using Java Application:
+=======================================================
+
+1) Load or register the driver
+
+Class.forName("class name which provide the implementation for Driver interface");
+
+ex:
+--
+Class.forName("oracle.jdbc.dirver.OracleDriver");
+
+or
+
+DriverManger.registerDriver("create the object for the driver implemetation class")
+
+ex:
+--
+
+
+DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+
+
+ex:
+====
+
+oracle database vendor given the driver class is
+===============================================
+
+oracle.jdbc.driver.OracleDriver()
+
+
+mysql:
+======
+
+com.mysql.jdbc.Driver()
+
+
+2) Establish the connection between java class and database
+
+
+Connection con = DriverManager.getConnection("url","username","password");
+
+Ex:
+=====
+
+Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
+
+
+3) create statement/preparedStatement/Callstatements objects
+
+
+
+
+Statement stmt = con.createStatement();
+
+PreparedStatement  pstmt = con.prepareStatement("query");
+
+CallableStatement cstmt = con.prepareCall("{call<procedure/functions>}");
+
+
+
+4) Execute the queries
+
+int  executeUpdate();--non-select queries(create,update,insert,delte);
+
+ResultSet  executeQuery(); --select queries
+
+
+boolean execute(); ---- both select --- return true and non-select -- return false
+
+5) close the connections
+
+close the preparedStatement/statement/callstatements/connection objects 
+
+
+con.close();
+
+=====================
+
+write a java program to connect oracle database and insert a
+record into a table emp using statement object;
+
+
+
+public class InsertExample{
+
+
+public static void main(String args[]){
+
+
+DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","ecom","ecom");
+
+Statement stmt = con.createStatement();
+
+stmt.executeUpdate("insert into emp values(101,'john',3000)");
+
+
+stmt.close();
+
+con.close();
+
+}
+
+}
+
+
+CallableStatement:
+==================
+
+
+
+how to create procedure:
+=========================
+Ex:
+
+
+create or replace procedure addition(a in number,b in number,c out number)
+as
+begin
+c:=a+b;
+end;
+/
+
+
+
+in 
+---
+setXXX
+
+
+
+cstmt.setInt(value for a);
+cstmt.setInt(value for b);
+
+
+out
+--------
+
+we need to registeroutput vaiable
+
+then call those variable we will get output
+
+
+cstmt.registerOutParameter(3,Types.INTEGER)
+
+int result = cstmt.getInt(3);
+
+
+
+
+how create to function:
+=============================
+
+
+create or replace function addSum(a in number,b in number) return number
+as
+result number;
+begin
+result:=a+b;
+return result;
+end;
+/
+
+
+Exercises:
+===========
+
+
+1)Create a java program using statement and preparedStatement object perform SQLDelete operation using where condition;
+
+
+sqlquery:
+---------
+delete from emp where eno="yyy";
+
+delete from emp where eno=?;
+
+
+
+2)Create a java program using statementt and PreparedStatem object perform SQLupdate opertion where condition;
+
+sqlquery:
+---------
+
+update emp set ename="sainath" where eno="xxx";
+
+
+update emp set ename=? where eno=?;
+
+
+
+3) create a procedure it will take three values eno ,ename, sal
+write a query in procedure
+
+insert into emp values(eno,ename,sal);
+
+pass the values for procedure using callabale statement.
+
+
+sqlProcedure:
+=================
+
+create or replace procedure s1(eno in number,ename in varchar2,esal in number)
+as
+begin
+
+insert into emp values(eno,ename,esal);
+insert into student values(eno,ename,esal);
+
+
+end;
+/
+
+4) CREATE A JAVA APPLICATION FOR INSERT INTO TABLE EMP
+USING TRY,CATCH,FINALLY BLOCKS 
+
+
+
+
+Batch:
+======
+
+executing multiple queries as single unit 
+
+stmt.addBatch("insert into emp value(101,'sainath',3000)");
+stmt.addBatch("update  emp  set ename='srikanth' where eno =101);
+stmt.addBatch("delete from emp where eno=102");
+
+
+
+stmt.executeBatch();
+
+
+
+Write a java program to insert a image into table img s
+using FileInputStream;
+
+
+
+
+1)create table with datatype for a column BLOB
+
+ex: 
+
+create table img(imgid,img blob);
+
+
+2) we need to store image in file input stream object
+
+ex:
+
+FileInputStream fis = new FileInputStream("D:\a.png");
+
+
+3) using statement or preparedStatement object by calling method 
+
+
+pstmt.setBinaryStream(3,fis);
+
+or
+pstmt.setBlob(2,fis);
+executeQuery():
+===============
+
+stmt.createStatement();
+
+Result rs = stmt.executeQuery("select * from emp");
+
+
+boolean = rs.next()
+
+while(rs.next()){
+
+System.out.println(rs.getInt("eno"));
+System.out.println(rs.getString(2));
+System.out.println(rs.getInt(3));
+
+
+}
+
+
+
+exercise:
+=============
+
+
+1)retrive records from emp using preparedstatement and the sqlquery is
+
+select * from emp where eno=? ;
+
+
+select * from login where username=? and passwrd=?;
+
+
+2)retrive records from emp using preparedstatement and the sqlquery is
+
+select ename,esal from emp;
+
+
+
+
+Excersie:
+=============
+
+1) create a table  jlogin (username varchar2(30),passwrd varcharr(30))
+
+insert into login('admin','admin'))
+
+2) create a java application using prepared stmt object 
+
+select * from login where username=? and password=?
+
+check the condition
+if username = admin and password = admin;
+
+then valid user;
+or 
+else invalid user;
+
+
+using scanner
+
+
+
+
+Reading  values from properties files:
+=======================================
+
+
+
+
+for mysql:
+-=========
+
+driver class name is : com.mysql.jdbc.Driver
+
+url: 
+
+synatx:
+
+jdbc:mysql://localhost:3306/<datbase-name>
+
+
+jdbc:mysql://localhost:3306/mydb
+
+username : root
+password : root
+
+
+we need to set the classpath for mysql-connetion-bin--.jar
+
+
+how to connect mysql:
+======================
+
+enter the password for root 
+
+2) create database <name>;
+
+show databases;
+
+3)use <datbase-name>;
+
+4) create table emp (eno int, ename varchar(30),esal float);
+
+
+
+
+===========================
+
+
+non-ScrollableResultset
+
+Ex:
+===
+statment stmt = con.createStatment()
+
+ResultSet rs = stmt.executeQuery("select * from emp");
+
+
+
+
+ScrollableResultset:
+========================
+
+to displays the records in bi-directionally(forward/backward) or randomly we use
+
+scrollableResultSet
+
+
+statment stmt = con.createStatment(types,modes)
+
+ResultSet rs = stmt.executeQuery("select * from emp");
+
+
+possible values for types
+=========================
+
+ResultSet.TYPE_SCROLL_SENSITIVE
+ResultSet.TYPE_SCROLL_INSENSITIVE
+ 
+
+possible values for modes
+=============================
+
+
+ResultSet.CONCUR_READ_ONLY
+ResultSet.CONCUR_UPDATABLE
+
+
+methods in ResultSet:
+=====================
+
+rs.beforeFirst();
+
+
+rs.afterLast();
+
+rs.absolute(1);
+
+
+
+=============================
+
+
+package com.ibm;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class RetriveImage {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
+	
+		FileOutputStream fos =  new FileOutputStream("D:\\img1.png");
+		
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","ecom", "ecom");
+
+		
+		Statement  stmt = con.createStatement();
+		
+		
+		ResultSet rs = stmt.executeQuery("select * from img");
+		
+		while(rs.next()){
+			
+			System.out.println(rs.getInt(1));
+			
+			Blob b =  rs.getBlob(2);
+			
+			byte[] img =  b.getBytes(1,(int) b.length());
+			
+			fos.write(img);
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+Types of Driver:
+====================
+
+1) Type1Driver(ODBC driver) :
+----------------
+sun.jdbc.driver.JdbcOdbcDriver()
+
+jdbc:odbc:<DSN-name>
+
+
+
+
+2)Type2Driver:(Oci driver):
+=============================
+
+oracle.jdbc.driver.OracleDriver()
+
+jdbc:oracle:oci:@xe
+
+
+3)Type3Drvier(Network protocal)
+================================
+
+
+
+4)Type4Driver(thin driver or pure jdbc driver)
+=================================================
+
+oracle.jdbc.driver..OracleDriver()
+
+jdbc:oracle:thin:@localhost:1521:xe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
