@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+
+<beans>
+
+	 <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+	<bean id="customer" class="com.ibm.Customer" autowire="byName"/>
+
+
+	<bean id="address" class="com.ibm.Address">
+		<property name="fulladdress" value="D3 IBM"/>
+	</bean>
+	 
+</beans> 

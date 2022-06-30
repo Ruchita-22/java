@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-init-method="afterBeanCreated"
+	default-destroy-method="beforeBeanCouldDestroy"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:component-scan base-package="com.demo.lifecycle"/>
+	<bean id="f" class="com.demo.lifecycle.Foo" >
+		<property name="fooVal" value="fooVal value"/>
+		<property name="anotherFooVal" value="anotherFooVal value"/>
+	</bean>
+	
+	<bean id="b" class="com.demo.lifecycle.Bar" >
+		<property name="barVal" value="barVal value"/>
+		<property name="anotherbarVal" value="anotherbarVal value" 
+		/>
+	</bean> 
+	<bean class="com.demo.lifecycle.MyApplicationContextAware"/>
+	<bean id="mybean" class="com.demo.lifecycle.MyBeanNameAware"/>
+</beans>

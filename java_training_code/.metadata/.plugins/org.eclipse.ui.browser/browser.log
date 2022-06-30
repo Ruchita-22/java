@@ -1,0 +1,20 @@
+
+Mar 02, 2018 09:33:21.18 NEW SESSION
+Mar 02, 2018 09:33:21.18 [Child 6216] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 09:33:21.19 [Child 6216] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 09:33:57.88 1520001237875	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+Mar 02, 2018 09:33:57.94 1520001237937	addons.update-checker	WARN	Update manifest for Lucifox@lucidor.org did not contain an updates property
+Mar 02, 2018 09:33:57.96 1520001237951	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+Mar 02, 2018 09:33:57.97 1520001237965	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+Mar 02, 2018 09:33:58.00 1520001237997	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+Mar 02, 2018 09:33:58.13 1520001238119	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Mar 02, 2018 09:39:17.31 *** registerProtocolHandler(mailto,https://mail.notes.na.collabserv.com/verse?mode=compose#href=%s,IBM Verse)
+Mar 02, 2018 09:48:03.85 [Child 11260] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 10:37:57.71 *** registerProtocolHandler(mailto,https://mail.notes.na.collabserv.com/verse?mode=compose#href=%s,IBM Verse)
+Mar 02, 2018 10:40:16.03 [Child 6964] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 10:58:50.02 [Child 5536] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 12:03:27.83 [Child 3456] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 12:12:46.49 [Child 10068] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 12:12:46.49 [Child 10068] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+Mar 02, 2018 12:39:00.58 *** registerProtocolHandler(mailto,https://mail.notes.na.collabserv.com/verse?mode=compose#href=%s,IBM Verse)
+Mar 02, 2018 13:58:26.86 [Child 8272] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345

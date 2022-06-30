@@ -1,0 +1,44 @@
+
+<html>
+
+<head>
+
+<script type="text/javascript">
+
+function  validateMB(){
+
+var mbp = /^[987][0-9]{9}$/; //pattern
+
+var mb = document.getElementById("m1").value;
+
+
+if(mbp.test(mb)){
+
+alert("mobile no is matched");
+
+}else{
+
+alert("mobile no is not matched");
+
+}
+}
+
+</script>
+
+</head>
+
+<body>
+<form>
+
+MobileNo : <input type="text" name="m1" id="m1" />
+<input type="submit" value="verify" onclick="validateMB()"/>
+
+
+
+</form>
+
+
+
+</body>
+
+</html>

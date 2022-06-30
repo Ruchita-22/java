@@ -1,0 +1,8 @@
+maven setting
+======================================================================
+https://stackoverflow.com/questions/15506043/create-a-maven-project-in-eclipse-complains-could-not-resolve-archetype
+
+
+
+
+https://stackoverflow.com/questions/18499931/eclipse-java-ee-new-maven-project-could-not-resolve-archetype

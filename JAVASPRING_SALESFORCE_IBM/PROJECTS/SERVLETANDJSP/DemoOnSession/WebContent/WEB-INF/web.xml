@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  
+  <listener>
+    <listener-class>com.ibm.listener.ExampleOnServeltContextListener</listener-class>
+  </listener>
+  
+  <listener>
+  <listener-class>com.ibm.listener.ExampleOnHttpSessionListener</listener-class>
+  </listener>
+  
+  <servlet>
+    <description></description>
+    <display-name>ExampleOnSession1</display-name>
+    <servlet-name>ExampleOnSession1</servlet-name>
+    <servlet-class>com.ibm.ExampleOnSession1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExampleOnSession1</servlet-name>
+    <url-pattern>/es1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExampleOnSession2</display-name>
+    <servlet-name>ExampleOnSession2</servlet-name>
+    <servlet-class>com.ibm.ExampleOnSession2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExampleOnSession2</servlet-name>
+    <url-pattern>/es2</url-pattern>
+  </servlet-mapping>
+</web-app>

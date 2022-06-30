@@ -1,0 +1,7 @@
+Association,Composition and Aggregation
+------------------------------------------------------------------
+https://howtodoinjava.com/object-oriented/association-aggregation-composition/
+
+
+
+JDK---- is core component of Java Environment and provides all the tools, executables and binaries required to compile, debug and execute a Java Program.

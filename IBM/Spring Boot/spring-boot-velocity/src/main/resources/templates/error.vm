@@ -1,0 +1,9 @@
+<html lang="en">
+
+<body>
+
+Something Went wrong : ${status} ${error}
+
+</body>
+</html>
+

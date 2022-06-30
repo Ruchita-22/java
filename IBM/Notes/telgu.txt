@@ -1,0 +1,17 @@
+manchi di--- acha hai
+antha--- how much
+a watch antha--- ye watch kitne ka hai
+Nakko re----nahi re
+
+
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\tools\apache-tomcat-8.0.49\bin>startup.bat
+The JRE_HOME environment variable is not defined correctly
+This environment variable is needed to run this program
+C:\tools\apache-tomcat-8.0.49\bin>startup.bat
+The JRE_HOME environment variable is not defined correctly
+This environment variable is needed to run this program
+C:\tools\apache-tomcat-8.0.49\bin>

@@ -1,0 +1,53 @@
+3.	Pattern which follows sequential order?
+Answer : Iterator
+4.	The pattern involves a single class which is responsible to create an object while making sure that only single object gets created?
+Answer: Singleton
+19.	Java.util.enumeration is an example of which pattern?
+Answer : Iterator
+20.	Aggregation represent in UML?
+Answer : hollow diamond on the collection side
+21.	Composition represent in UML?
+Answer : Filled diamond on the side of the collection
+22.	Generalization represent in UML?
+Answer : hollow triangle shape on the superclass end of the line
+23.	Dependency represent in UML?
+Answer : dotted line followed by
+24.	1..*  specify about relationship?
+Answer : At least one instance
+25.	0..1 Specify about relationship?
+Answer: Zero or one instance. The notation n..m indicate n to m instances.
+26.	The relationship between the object and component parts in UML diagram are represented by ----------------.
+Answer : Aggregation
+49.	When we use command design pattern
+Answer. when history of requests is needed
+50.	In use case diagram actor represents?
+Answer: An actor represent a roll that an outsider takes on when intracting with the business system for instance, an action can be a customer, a business partner , a supplier or another business system
+
+51.	In use case diagram actor represents ____?
+Answer: An actor represents a role that an outsider takes on when interacting with the business system.
+ For instance, an actor can be a customer, a business partner, a supplier, or another business system.
+77.	Behavior of UML diagram?
+Answer: a. usecase
+
+78.	 Decouples in which design pattern?
+Answer: Bridge
+86.	When we use command desig pattern?
+Answer: when history of request is needed
+87.	Xyz-xyz instance (pattern)
+Answer: Singleton
+89.	Design pattern to limit class instaiated to one object?
+Answer: Singleton
+110.	In class diagram instance are represented by using
+Answer: Italics
+111.	Which type of driver converts jdbc calls into the Network protocol used by the datamanagement system?
+Answer: Type 4
+112.	UML behavior diagram?
+Answer: Attribute diagram
+123.	Which diagram in UML shows a complete or partial view of the structure of a modeled system at a specific time?
+a) Sequence Diagram
+b) Collaboration Diagram
+c) Class Diagram
+d) Object Diagram
+Answer: d
+
+

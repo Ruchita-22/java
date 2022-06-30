@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function validate(){
+		
+		var mbp='/^[789][0-9]{9}$/';
+	
+		var mobile_number = document.getElementById("m1").value;
+		//alert("hello");
+		if(mbp.test(mobile_number)){
+			
+			alert("mobile number match");
+			
+		}else {
+			alert("mobile number doesnot match");
+		}		
+		
+		 
+	}
+	
+	
+
+</script>
+</head>
+<body>
+	<form >
+		Mobile Number:<input type="text" name="m1" id="m1" />
+		<input type="submit" name="verify" value="verify" onclick="validate()">
+	
+	</form>
+</body>
+</html>

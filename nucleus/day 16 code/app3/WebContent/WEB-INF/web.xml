@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>app3</display-name>
+	<listener>
+		<listener-class>com.controllers.listners.ConnectionInitListner</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.controllers.listners.DemoServletContextAttributeListner</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>ShowAllBooksController</servlet-name>
+		<servlet-class>com.controllers.ShowAllBooksController</servlet-class>
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>AddBookController</servlet-name>
+		<servlet-class>com.controllers.AddBookController</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddBookControllerV2</display-name>
+		<servlet-name>AddBookControllerV2</servlet-name>
+		<servlet-class>com.controllers.AddBookControllerV2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowAllBooksController</servlet-name>
+		<url-pattern>/ShowAllBooksController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddBookController</servlet-name>
+		<url-pattern>/AddBookController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddBookControllerV2</servlet-name>
+		<url-pattern>/AddBookControllerV2</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>addbook.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

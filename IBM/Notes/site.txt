@@ -1,0 +1,15 @@
+howtodoinjava
+journaldev
+mkyong
+javatpoing
+
+SQL --- studytonight
+
+
+SOLID---https://howtodoinjava.com/best-practices/5-class-design-principles-solid-in-java/
+
+Thread---http://tutorialspointexamples.com/multithreading-in-java/
+https://www.javatpoint.com/inter-thread-communication-example
+
+
+public>protected>default>private

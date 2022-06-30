@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  <!-- 
+       for com.ibm package
+      <bean id="collectionExample" class="com.ibm.CollectionBean">
+      	<property name="theList">
+			<list>
+				<value>red</value>
+				<value>red</value>
+				<value>blue</value>
+			</list>
+		</property> 
+		
+		<property name="theSet">
+			<set>
+				<value>red</value>
+				<value>red</value>
+				<value>blue</value>
+			</set>
+		</property>
+		
+		<property name="theMap">
+			<map>
+				<entry key="left">
+					<value>right</value>
+				</entry>
+				<entry key="up">
+					<value>down</value>
+				</entry>
+			</map>
+		</property>
+		
+		<property name="theProperties">
+			<props>
+				<prop key="left">right</prop>
+				<prop key="up">down</prop>
+			</props>
+		</property>
+		
+      </bean>
+       -->
+      
+      
+      <bean id="CustomerBean" class="com.ibm1.Customer">
+			<property name="lists">
+				<list>
+					<value>1</value>
+						<ref bean="PersonBean"/>
+						<bean class="com.ibm1.Person">
+						<property name="name" value="kalia"/>
+					</bean>
+				</list>
+			</property>
+			
+			
+			<property name="sets">
+				<set>
+					<value>1</value>
+					<ref bean="PersonBean"/>
+					<bean class="com.ibm1.Person">
+						<property name="name" value="chutki"/>
+					</bean>
+				</set>
+			</property>
+   
+      		<property name="maps">
+			<map>
+				<entry key="key1" value="1"></entry>
+				<entry key="key2" value-ref="PersonBean"></entry>
+				<entry key="key3" >
+					<bean class="com.ibm1.Person">
+						<property name="name" value="raju"></property>
+					</bean>
+				</entry>	
+			</map>
+		</property>
+		
+		<property name="pros">
+			<props>
+				<prop key="admin">admin@nospam.com</prop>
+				<prop key="support">support@nospam.com</prop>
+			</props>
+		</property>
+	
+      </bean>
+      
+      <bean id="PersonBean" class="com.ibm1.Person">
+			<property name="name" value="jaggu"></property>
+		</bean>
+
+</beans>

@@ -1,0 +1,219 @@
+procedural
+----------------------------------------------------------------------------
+A large prog is divided into set of small procedure that perform specific task.
+
+declaration is in the beginning only
+
+lexical element is grammer part 
+
+bottle example---
+content not know is abstration
+wrapper--- package
+
+
+oops
+-------------------------------------------------------------------------------------------------------------------------------
+
+public>default>private
+
+adv---
+flexible code  
+eassy to read
+didv--
+no abstration or modularity
+spegetti
+
+fn
+imperative
+
+
+oops
+pass msg
+receive msg
+process data
+
+
+adv of oops
+----
+real world prog
+reuseablity of code
+modularity of code
+resilience to change
+info hiding
+
+difference encap. and abstration
+
+
+
+dog example 
+vechicle example
+
+relationship
+-----------------
+is-A
+has-A
+Uses-A
+
+
+
+jvm fun
+ensure java is platform independent
+interpret compile code
+group librarties
+creation of applets
+
+
+difference between stringBuffer and StringBuilder
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+interface example ------ laptop and projector
+pin socket are given as standard 
+laptop is make by one company and projector is make by another compny and projector is going to use laptop so we have to make standard to use stuff
+projector has make standard and laptop has implement it and projector will call it.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+constant declaration ---- all constant are implicitly public,static and final
+
+
+
+interface as a collection of abstract method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+enum is used to hold flag value
+
+lexical part --- keywords , operator,
+protector
+
+
+
+
+
+journal dev
+mkyonk
+
+
+
+create one folder at any location and give the path of that folder in eclipse and that folder work as your workspace
+
+
+
+default --- do not explictly declare
+flow control statement
+
+
+interface example---car
+
+
+
+
+
+primitive
+
+There would be one copy of each static variable per class, regardless of how many obj are created from it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

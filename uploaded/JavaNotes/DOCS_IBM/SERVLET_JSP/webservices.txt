@@ -1,0 +1,506 @@
+
+   WEBSERVICES:
+   ============
+
+   web : --www
+
+  services --  any functionality (method---);
+
+
+  webservices:
+  -------------
+
+  the service which is available on the server(webserver/appicationserver)
+
+   
+  How to access this service:
+  ---------------------------
+
+  
+   To share the information between two interoperable systems
+  we use webservices.
+
+  1)  to share the information using WSDL(Webservice Description language) 
+  file. or service definition.
+
+  2) wsdl or service definiton --contains
+    description about your service
+
+    a) Service class name
+    b)Service name or method name 
+    c) Return type of service method
+    d) method parameter types
+    e)End point URL -- the local where exact the service is running
+
+   these information in the form of xml.
+
+  
+  webservices:
+ ------------
+  1)WSDL
+  2)Skeleton
+  3)Stub
+  4)UDDI --(Universal Descrption Descovery Integration)--public -optional 
+  5)SOAP(simple object  Access Protocol) - protocol
+  6)Http (Hyper text transfer protocol) -protocol --
+
+ 
+  3)First this wsdl file store into UDDI Registry system  with UDDI key
+
+  4) the UDDI key infromation send to client through mail.
+
+  5) the client request for WSDL file using UDDI Registry Key.
+ 
+  6)th cilent will generate  stub class based on inforamtion available
+   inside WSDL file
+
+  7) the client send the request for the service class
+      using SOAP request(SOAP tag) ---using http protocol.
+
+  8) the service class get SOAP request, to process 
+    the request it will convert the SOAP request into SKeleton class
+
+  9)the request is processed  then the response is send  back 
+    to client using  SOAP response through http protocol
+
+  10)the client get the SOAP response, to dispaly the processed 
+   output first it will convert into stub classes
+  and display the processed output.
+
+
+  WEBSERVICES is a specification:
+   ==============================   
+
+  1) it contain rules and guidelines  to develop 
+    a webservice using  6 components(WSDL,Skeleton,Stub,UDDI,SOAP/REST,
+    Http)
+
+
+  Sun microsystem provide api(intferace,classes) based on 
+  webservice specification
+
+  1)JAX-RPC ---(JAva Api For XML - Remote procedure call)-jdk-1.4
+  2)JAX-M   ---(Java APi for xml - Message)-jdk - 1.4
+  3)JAX-WS  ---(JAVA api for xml - WebServices) - jdk-1.5
+  4)JAX-RS  ---(JAva api for xml - RestFUL services) - jdk-1.6
+
+  
+  JAX-RPC-APi   
+    --RPC implementation - sun microsystem
+    --axis1 - implementation -Apache foundation
+
+  JAX-M --Deprecated--JMS(Java Messaging Services)
+
+  JAX-WS-APi:
+  ---->
+  implementations:
+  -----------------
+
+  RI-(Reflection Api)--sunmicrosystem
+  Metro --sun micro system
+  axis2 - Apache foundation -- will not support spring integration
+  apachecxf -- Apache ---spring integration
+
+  JAX-RS -Api
+  -----------
+ 
+   Jersey-implementation --
+   RestEasy - Redhat --
+   RestLet - given by one developer
+   apachewink  --given by apache (will not support spring integration) 
+   apacheCXF -- given by apache(spring integration) 
+
+
+   synchronous  and  Ayschronous
+  --------------------------------
+  1) synchronous:
+    --------------
+       
+     JAX-RPC,JAX-WS,JAX-Rs  api's we can  develop
+     synchronous webservices.
+
+  2)Ayschronous:
+   -------------
+    JAX-M
+    JMS(Asychronous)--(MOM-middleware of messages(RabbitMQ,ActiveMQ..) )
+
+  
+  Webservices are two types:
+  --------------------------
+
+  1) SOAP webservices --- JAX-RPC,JAX-WS,JAX-M APi
+
+  2) RestFUL webservices --> JAX-RS APi--
+
+      
+  Difference Between SOAP and REstful
+  -----------------------------------
+
+   1)a)In soap the communication happend between two systems(interoperable)
+      through xml(WSDl) using SOAP Specification over http protocol.
+    i.e it will only one format SOAP request and SOAP response.
+    
+     b)IN Restful the communication between two systems happened
+       more than xml(WADL) format ,JSON,text,Html,Pdf ...etc 
+      WADl - webappliaction Description language
+      it contain URLs(end point url)
+
+   2)a)SOAP will support or provide  Message Level Security and 
+     USERNAME TOKEn Level Security(Basic Authentication).
+     
+    B) Rest will support only USERNAME TOKEN Level security.
+
+  3)1) Soap is heavy weight .
+    2)Restful is light weight.
+
+ 
+  RestFUl:
+  --------
+
+  RestFul stands for Representational state Transform
+
+  to convert the object state into different format
+  (json,text,xml,html..etc)
+
+  
+   9-Annotations:
+   --------------
+   1)@GET
+   2)@POST
+   3)@PUT
+   4)@DELETE
+   5)@QueryParam
+   6)@MatrixParam
+   7)@PathParam
+   8)@FormParam
+   9)@Consumes
+   10)@Produces
+   11)@Path
+
+
+  Restful using Jersery Implementation:
+ ---------------------------------------
+
+  Steps to work with Restful Api
+  -------------------------------
+
+  1) create a Dynamic  webproject
+  2)Add the required jars for jersery  in project lib-folder
+   and classpath of your project
+  3)COnfigure the Sketelon class of Jersery implementaion in web.xml
+  4)request for service using endpoint url.
+  
+  http://localhost:serverportno/projectname/
+         skeleton-url/class_level_path/method_level_path
+
+  first download jersery jars  from jersery.org
+
+  5)create a restful service method which print welcome message
+   in Welcome class.
+
+
+ 
+   @QueryParam Annotation:
+   -----------------------
+
+
+    suppose if your rest service method using any predefined
+    data as parameter then we can pass values for thatto 
+    parameter using @QueryString("parametername")or
+    @Pathparam("parameter") or @MatrixParam or@FormParam
+
+   How to work with @QueryParam
+ - -----------------------------
+
+   ex:
+  ---
+         public String sayHello(@QueryString("m1") String msg,
+               @QueryString("n1") String name){
+
+           return msq+" "+name;
+
+        }
+
+
+   to call any service method which take @QueryParam by using(?,&)
+ ----------------------------------------------------------------
+
+  
+   request url:
+   ------------
+
+   syntax:
+   -----
+
+   http://localhost:portno/projectname/skeleton_url/class_level_path
+    /method_level_path?m1="hello"&n1="raju"
+
+
+   @PathParam Annotations:
+   -----------------------
+   
+    suppose if your want pass parameter to rest service method 
+   using @pathparam
+
+  ex:
+  ==
+
+  @Path("/param")
+  public String sayHello(@PathParam("m1") String msg,
+               @PathParam("n1") String name){
+
+           return msq+" "+name;
+
+        }
+
+    to pass the values for path param:
+   -----------------------------------
+   1) we need specfiy pathparameter names along withyour 
+      method level path using ({pathparameter names})
+
+  ex:
+  ----
+  
+   @Path("/param/{m1}/{n1}")
+
+
+  
+
+   request url using pathparam:
+   ------------
+
+   syntax:
+   -----
+
+   http://localhost:portno/projectname/skeleton_url/class_level_path
+    /method_level_path/m1 value/n1 value
+ 
+   
+  @MatrixParam
+  -------------
+   suppose if you want to pass values for rest service method
+   using @Matrixparam
+
+
+  ex:
+  ==
+
+  
+  public String sayHello(@MatrixParam("m1") String msg,
+               @MatrixParam("n1") String name){
+
+           return msq+" "+name;
+
+        }
+
+
+  to pass the values for matrixparam:
+  -----------------------------------
+   we can pass the value for matrix parameters using
+   (;) comma separator.
+
+  ex:
+  ----
+  
+  request url using matrixparam:
+  -----------------------------
+
+ syntax:
+ -----
+
+ http://localhost:portno/projectname/skeleton_url/class_level_path
+    /method_level_path;m1=value;n1=value
+
+
+  @FormParam:
+  -----------
+
+  1)suppose if you want to pass values for rest method
+   through Form then we will use @FormParam
+  
+ 2)the form method should be post and 
+   the rest method should be @POST 
+
+
+
+  note:
+  ------
+   a) the text  type  name should be same as @FormParam
+
+   ex:
+   ----
+   <form>
+     Eno :<input type="text" name="eno" /><br>
+      Ename :<input type="text" name="ena" /><br>
+       Salary :<input type="text" name="esal" /><br>
+         <input type="submit" name="save" /><br>
+   
+   </form>
+   
+
+   -----------------------------------------------
+
+   rest method:
+   -----------
+
+     public String empDetails(@FormParam("eno") String eno,
+                 @FormParam("ena") String ename,
+                  @FormParam("esal") String sal){
+
+   }
+
+   
+  
+  @Consumes:
+  -----------
+
+   when if the rest method paramters other than
+   @QueryParam,@PathParam,@MatrixParam,@FormParam
+
+    if the rest method parameter is userdefined(classes) data type.
+    ex: javabean class
+
+    ex:
+   -----
+    @Path
+    @Consumes("application/json")or@Consumes(MediaType.APPLICATION_JSON)
+    or
+    @Consumes("application/xml") or@Consumes(MediaType.APPLCIATION_XML)
+
+ 
+   public String sayHello(EMployee e) 
+    
+  @Produces:
+  ==========
+   if rest method return type 1,2,3 then we will use @Produces   
+ 
+
+   1) String,StringBuffer,Stringbuilder(optional)
+   2)UserDefined TYpe
+   3)Response
+
+   
+ ex
+ ---
+ 
+   @Produces("application/json") or @produces(MediaTYpe.APPLICATION_json)
+   @Produces("applicaation/xml")
+  
+  public Employee getEmpDetails(@QueryParam..){
+
+
+
+   }
+
+   json:
+   -----
+
+   to convert Javaobject into Json --JACKSONAPi ---
+                                   --GSON-Google
+
+   to convert json into Javaobject  --JACKSON API--
+
+
+  XMl(JAXB):
+  -----
+
+   to convert javaobject into xml -- JAXB -APi(java api for xml binding)
+
+  to convert xml to javaobject 
+
+  ============================================================
+
+
+   
+  ex:
+  ===
+
+  1) create a  Rest  Service class name(EmployeeDetailsService)
+ 
+   2)create a Rest method called getEmpDetails(@QueryParam(eid))
+
+      //Write a jdbc code  to get the record based on eid
+   
+   3)the return type(json) of this method is Employee class(JAVA Bean Class)
+
+    
+
+  4) create a client class to access that getEmpDetails service method
+
+    and convert json object into EMployee object
+
+   and display the records
+
+
+    
+  @Consumers:
+  -----------
+    
+   1) create a rest method which take userdefined type as parameter
+
+    //write a code to insert  a record into a table employee
+
+  2) create a client class to request for above method 
+     to insert into a table.
+  
+
+   JAX-B ---
+   -----
+
+  @XMLRooTElement
+  @XMLAttribute
+  @XMLElement
+
+
+  USERNAME SEcurity TOken(Basic Authication)--
+
+   update a record of employee:
+   ---------------------------
+
+  delete a record of employee
+   
+
+  
+
+
+  
+  
+
+
+
+    
+
+
+
+     
+     
+     
+
+
+
+
+
+
+
+
+ 
+
+  
+ 
+  
+
+  
+
+
+
+  
+
+
+
+
+  
+
+    
+
+     
+    

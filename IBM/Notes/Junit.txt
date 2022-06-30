@@ -1,0 +1,123 @@
+JUnit Testing
+-------------------
+Unit is a peice of code in java prog.
+(class , member method or variable)
+
+
+Junit testing is used to test the code ,
+Developer ensure that the code is working as he/ she expected.
+
+how developer will test the code by comparing the output(expected output and actual output)
+
+
+Junit tool is given by Junit.org and junit4.12.jar file
+
+Annotations required for junit:-
+------------------------------------
+
+
+@Test---
+@Before----
+@Beforeclass---
+@After---
+@Afterclass---
+@Ignore---
+
+
+eg
+===
+create a class called calculation it contain one method called int sum(int, int);
+
+
+
+
+Assertion:
+======================
+assertEquals(Expected,Actual)
+-----------------------------
+assert is a method used to determining the testcase output i.e testcase i passedbor failed
+
+these methods avilable in org.junit.Assert.*;
+
+
+
+
+assertEquals
+assertArrayEquals
+assertNotNull
+assertNull
+
+eg:
+---------
+Assert.assertEquals(expected,actual);
+
+assignment
+-----------------------------------------------------------------------------------
+create a class called ExampleOnJunit
+in this class create a method which return int array
+
+write a junit test code for the method and compare expected output ant actual output using assertArray(expected,actual)
+
+
+
+----------------------------------------------------------------------------------------------------------------
+BlueMix
+
+
+----------------------------------------------------------
+MVC
+-----------
+view layer--- presentation layer(.html,.jsp,.php)
+----------------------------------------------------------------------------------------------------------
+Controller-
+-------------------------------------------------------------------------------------------------------------------------
+struts 1.x---ActionServlet
+struts2.x--StrutExecutePrearedAndExcuteFilter
+spring --DispatcherServlet(front Controller)
+
+service
+-------------------------------------------------------------------------------------------------------------------------
+model--javabean,DAO(Data Access Object) classes,VO(value object)classes
+DAO---a class which contain code related to db
+javabean--- a class which contain getter and setter method
+--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

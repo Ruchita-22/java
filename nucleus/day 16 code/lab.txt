@@ -1,0 +1,69 @@
+reate an customer record processing application:
+	1. accept name, address, mobile,email and favourite programming language
+	2. add record to db
+	3. use all discussed design pattern and follow coding practice
+
+		=>MVC
+
+		=> putting jsp in webcontent X, should make them sec
+
+		=> connection object should be put in lister(servletcontext lister)
+		
+		=> factory, singleton for connection factory
+		
+		=> dao and dto
+
+		=> exception wrapping and rethowing
+
+	4. take it as a exam... 
+		marker will be offered and will tell u why ur marks are deduced
+
+
+
+Code for creating html form:
+-------------------------
+creating customer form and Printing customer information
+
+	step 1:
+
+	create form:
+	--------------
+
+	<form action="addCustomer.do" method="POST">
+	Customer ID : <input name="id" /> <br>
+	Name: <input name="name" /> <br>
+	Address: <textarea name="addr" rows="4" cols="20"></textarea> <br>
+	Mobile: <input name="mobile" size="9" /> <br>
+	Fax: <input name="fax" size="9" /> <br>
+	E-mail: <input name="email" size="25" /> <br><br>
+	<input type="submit" value="Add" />
+	</form>
+
+
+	create servlet to process form:
+	-------------------------------
+
+	.....
+	......
+
+	//retrive info
+
+	String id = request.getParameter("id");
+	String name = request.getParameter("name");
+	String addr = request.getParameter("addr");
+	String mobile = request.getParameter("mobile");
+	String fax = request.getParameter("fax");
+	String email = request.getParameter("email");
+
+	//Display customer informations
+
+	out.println("<h1> Customer Information </h1>");
+	out.println("<b>ID: </b>" + id + "<BR>");
+	out.println("<b>Name: </b>" + name + "<BR>");
+	out.println("<b>Address: </b>" + addr + "<BR>");
+	out.println("<b>Mobile: </b>" + mobile + "<BR>");
+	out.println("<b>Fax: </b>" + fax + "<BR>");
+	out.println("<b>E-mail: </b>" + email + "<BR>");
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+
+	<bean id="bcollection" class="com.demo.collection.Bank">
+		<property name="bankName" value="sbi" />
+		<property name="accounts">
+			<list>
+				<ref bean="a1" />
+				<ref bean="a2" />
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="a1" class="com.demo.collection.Account">
+		<property name="id" value="121" />
+		<property name="name" value="raja" />
+		<property name="balance" value="3000" />
+	</bean>
+	<bean id="a2" class="com.demo.collection.Account">
+		<property name="id" value="12" />
+		<property name="name" value="baja" />
+		<property name="balance" value="3000" />
+	</bean>
+
+</beans>

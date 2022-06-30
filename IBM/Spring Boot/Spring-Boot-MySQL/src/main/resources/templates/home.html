@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Spring Mysql Boot Demo IBM</title>
+		<style>
+			table, th, td {
+			   border: 1px solid black;
+			   border-spacing: 0px;
+			}
+			th, td {
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body style="font-family:Segoe UI">
+	<h1>MySQL Game Demo</h1>
+	<br />
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Game Name</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="game : ${games}">
+					<td th:text="${game.id}"></td>
+					<td th:text="${game.name}"></td>
+					<td th:text="${game.description}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<h2>Add Game</h2>
+		<form action="/addGame" method="POST">
+			<table>
+			<tr>
+			<td>
+			Game </td> <td> <input type="text" id="name" name="name" /><br /> 
+			</td>
+			</tr>
+			<tr>
+			<td>
+			Description </td> <td> <textarea rows="5" cols="70" id="description" name="description" /><br />
+			
+			</td>
+			</tr>
+			<tr>
+			<td colspan="2"><input type="submit" value="Add Game" /></td></tr>
+			</table>
+		</form>
+	</body>
+</html>

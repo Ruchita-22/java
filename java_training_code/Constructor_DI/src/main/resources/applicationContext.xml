@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+
+<beans>
+	 <bean id="WeatherService" class="com.ibm.WeatherServiceImpl">
+		  <property name="WeatherDao">
+		    <ref local="WeatherDao"/>
+		  </property>
+	 </bean>
+
+	<bean id="WeatherDao" class="com.ibm.StaticDataWeatherDaoImpl">
+	
+	</bean>
+
+</beans> 

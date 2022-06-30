@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+
+<beans>
+
+	
+
+	<bean id="BaseCustomerMalaysia" abstract="true">
+		<property name="country" value="Malaysia"></property>
+	</bean>
+
+	<bean id="CustomerBean"  parent="BaseCustomerMalaysia"  class="com.ibm.Customer">
+		<property name="action" value="buy"/>
+		<property name="type" value="1"/>
+	</bean>
+	 
+</beans> 

@@ -1,0 +1,28 @@
+
+
+
+1)conditional statements if-esle
+2)String class
+3)mutithreading -- thread communication -yeid and join
+4)serilzation 
+5)try catch
+6)treeset ,bitset
+7)comparaable and comparator interfaces
+
+8)Dsign patterns --strucutral,behaviour,functional
+1)singleton design pattern
+
+9)uml -
+
+10)jdbc -- 
+
+1)execute(),executeUpdate,exeuteQuery()
+
+scrollable resultset
+
+batchupdates.
+
+2) callable statement
+
+
+

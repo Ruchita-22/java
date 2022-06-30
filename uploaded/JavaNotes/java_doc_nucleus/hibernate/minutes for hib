@@ -1,0 +1,119 @@
+step1:
+----------
+
+
+
+hello world of hibernate
+
+
+=> 0. create an maven project and put pom.xml entries
+=>1.create an hiberante.cfg.xml
+
+=>2. create an pojo with hibenate anno( @Entity, @id)
+
+=> Dependencies from hib? or from javax.persistance?
+---------------------------------------------------
+
+		JPA(Java Persistance API)=>	Hibernate
+									EclipseLink
+									TopLink
+=> write code for 
+=> SessionF=> session=> tx=> session.save(c);
+
+
+	SessionFactory factory=
+				new AnnotationConfiguration().configure("foo.cfg.xml").buildSessionFactory();
+		
+		Session session=factory.openSession(); // openSess vs getCurrSess
+		
+		// transient <--------> persistance<-------------->detached
+		
+		Customer customer=new Customer(9981, "umesh"	, "noida");
+		
+		session.getTransaction().begin();
+		session.save(customer);
+		session.getTransaction().commit();
+		
+		session.close();
+		factory.close();
+		
+		
+---------------------------------
+hibernate issues and best pracitce: printout
+best book pdf
+-----
+con discc minutes read 
+
+hands on...
+mcq X
+----------------------------------------------
+
+	=> for showALL => we can work without tx
+	
+	How it works?
+		//from Customer => HQL=> Query parser=> sql=> database=> rs=> get all tuples => wrap then in customer object
+	
+	
+Update
+--------
+	=> first get the object in hib memroy
+		=> then change it 
+		=> then commit with changed value
+		
+	=> // get vs load was discussed ..
+		
+		
+	=> CRUD opeation
+	
+	=> how to integrate with servlet jsp maven projecct
+	
+	=> as we have loaded driver in =>servletContext=> SCL => 
+	
+		create a SCL => and put and factory in context scope
+		
+		then in any servlet we can get that factory
+		
+		and then from that factory we get a Hibnate Session 
+		in doGet/doPost
+		
+		
+		=> why not put session into context ? and used by whole application
+		
+			XXX Approach
+			
+		=> SESSION IS NOT THREAD SAFE
+		
+		=> and if two threads are gonna to access same session we have a mess!
+		
+		
+		
+		=> still we can have more issues
+		
+		what if 2 threads are working on samme customer rec?
+		
+		
+		lots of conn issues: we hv a solution=> locking
+			-> optimiti , passamitivs (we can use latter on)
+			
+			-> versioning *
+			
+	
+	
+		=> 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

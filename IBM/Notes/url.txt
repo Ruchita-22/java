@@ -1,0 +1,38 @@
+page directive
+---------------------------
+https:/
+/www.journaldev.com/2044/jsp-directives-page-include-taglib-example
+
+https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/http/HttpServletResponse.html
+
+734304706103
+
+
+
+
+
+Jsp TagLib
+---------------------------------------------------------------------------------
+Jsp standard tag lib. is given apache foundation
+
+JSTL is used to remove java code from scriptlet
+JSTL-12.jar
+1)core-----to perform conditional statement
+2)sql-----to interact with data
+3)formatting------
+4)functional----string manuplication
+5)xml processing---to xml data
+
+
+
+
+
+doubt
+----------------------------------
+Scroll_insenstive
+scroll_senstive
+
+
+
+repeatable read
+dirty read

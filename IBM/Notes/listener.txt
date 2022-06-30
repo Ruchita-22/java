@@ -1,0 +1,60 @@
+Listener
+---------------------------------------------------
+ServletContexrListener(I)
+
+
+
+https://www.quora.com/What-is-the-difference-between-a-servlet-and-a-listener-in-a-Java-web-application
+http://www.programering.com/a/MzM3EDNwATY.html
+https://stackoverflow.com/questions/4720942/difference-between-filter-and-listener-in-servlet-java-ee
+
+https://www.madbit.org/blog/programming/685/filter-vs-listener/#sthash.VefCeugG.dpbs
+
+
+
+
+
+    Filter
+
+    A filter is an object that dynamically intercepts requests and responses to transform or use the information contained in the requests or responses.
+
+    Filters typically do not themselves create responses but instead provide universal functions that can be "attached" to any type of servlet or JSP page.
+
+    The filter is run before rendering view but after controller rendered response.
+
+    A Filter is used in the web layer only as it is defined in web.xml.
+
+    Filters are more suitable when treating your request/response as a black box system. They'll work regardless of how the servlet is implemented.
+
+    Filters are used to perform filtering tasks such as-----
+    
+login authentication ,
+auditing of incoming requests from web pages, 
+conversion, 
+logging, 
+compression, 
+encryption and decryption, 
+input validation etc.
+
+    A Servlet Filter is used in the web layer only, you can't use it outside of a web context.
+
+
+
+set classpath=servlet-api.jar
+
+
+
+
+
+
+
+In how many ways server create servlet object
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1)
+2)click on anchor tag
+3)click on submit tag
+4)<load-on-startup>positive value</load-on-startup>
+
+

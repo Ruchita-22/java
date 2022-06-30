@@ -1,0 +1,36 @@
+Trick question! Private methods can NOT be overriden, but they CAN be
+re-declared/redefined in the subclass, and called directly on the
+subclass
+object. But polymorphism will not apply.
+================================
+
+Protected members (methods and data) can be inherited by subclasses,
+including those outside the package. The only difference between default
+(no modifier) and protected, is that protected extends visibility outside
+the package... but ONLY to subclasses.
+================================
+
+The result of an arithmetic operation on any two primitive integer
+operands
+will be at least an int -- even if the operands are byte and short.
+================================
+
+
+You can declare or initialize more than one variable in a for loop, but
+you
+can't mix declarations with initializations.
+================================
+
+Floating point numbers don't produce a divide-by-zero
+ArithmeticException.
+They will give a result which is a Not a Number value.
+================================
+
+Shifting bits by a number greater than or equal to the number of bits
+in the result (eg. 32 bits for an int) will cause the value to be shifted
+by the number modulo the number of bits in the value (you shift by 33%32
+which is 1).
+================================
+
+
+37 page

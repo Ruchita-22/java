@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;Day2/src/com.ibm.multi_level_inhertance&apos;&#x0D;&#x0A;- Original project: &apos;Day2&apos;&#x0D;&#x0A;- Destination element: &apos;Day2/src/com.ibm.multi_level_inhertance&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.ibm.inhertance1.Base.java&#x0D;&#x0A;     com.ibm.inhertance1.TestClass.java&#x0D;&#x0A;     com.ibm.inhertance1.Child.java" description="Copy compilation units" destination="/src&lt;com.ibm.multi_level_inhertance" element1="/src&lt;com.ibm.inhertance1{Base.java" element2="/src&lt;com.ibm.inhertance1{TestClass.java" element3="/src&lt;com.ibm.inhertance1{Child.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1518078765300" units="3" version="1.0"/>
+</session>

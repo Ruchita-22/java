@@ -1,0 +1,62 @@
+mvn archetype:generate -DgroupId=com.demo -DartifactId=myproj -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+<build>
+		<finalName>demo</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+mvn archetype:generate -DgroupId=com.nu -DartifactId=finalapp2 -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+
+
+
+mvn eclipse:eclipse -Dwtpversion=2.0
+
+
+
+	<build>
+		<finalName>myapp</finalName>
+		<plugins>
+		<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+
+				<!-- ignore missing web.xml error -->
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+

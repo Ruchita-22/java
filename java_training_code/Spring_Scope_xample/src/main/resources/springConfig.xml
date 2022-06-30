@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  
+       <!-- <bean id="singleton1" class="com.ibm.TestBean"  />
+   		<bean id="singleton2" class="com.ibm.TestBean" scope="singleton" />
+  
+  		 <bean id="prototype1" class="com.ibm.TestBean" scope="prototype" /> -->
+  		 
+  		<bean id="customerService" class="com.ibm.prototype.CustomerService" scope="prototype"/>
+</beans>
